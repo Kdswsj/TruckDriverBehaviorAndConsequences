@@ -1,6 +1,7 @@
 # Truck Driver Behavior And Consequences
 
 Galvanize Data Science Immersive Capstone Project
+
 Kim D. Sorensen, 12/17/2017
 
 Final Proposal:
