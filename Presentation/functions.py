@@ -46,7 +46,6 @@ def AdjustDFE(df):
 
     return dfe45
 
-
 def GetFeatureImportance(df):
     #select the features
     X = df[['DistanceAvgLoadFactor', 'StopIdlePercent', 'DistanceAvgvehiclespeed','TopGearMinusOneUsage', 'HardBrakesPr1000miles', \
@@ -61,7 +60,7 @@ def GetFeatureImportance(df):
 
 def createFeatureImportancePlot(feat_imp):
     p = figure(plot_width = 400, plot_height=400)
-    y1 = [x for x in range(len(feat_imp.columns))]
+    y1 = [x for x in range(len(feat_imp))]
 
     p.hbar(y = y1,right=feat_imp,height=0.5,left=0)
 

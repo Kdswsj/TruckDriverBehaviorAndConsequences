@@ -1,7 +1,5 @@
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
-from bokeh.plotting import figure
 
 def GetData():
     # read in the data
@@ -45,24 +43,3 @@ def AdjustDFE(df):
     dfe45 = lm.predict(X)
 
     return dfe45
-
-
-def GetFeatureImportance(df):
-    #select the features
-    X = df[['DistanceAvgLoadFactor', 'StopIdlePercent', 'DistanceAvgvehiclespeed','TopGearMinusOneUsage', 'HardBrakesPr1000miles', \
-           'BrakesPr1000miles', 'IdleFuelPercentage', 'EngineBrakePercentage', 'CruisePercentage', 'OverSpeedBPercentage', \
-           'OverSpeedAPercentage', 'EngineFanPercentage']]
-    y = df['DriveFuelEconomy']
-
-    regr = RandomForestRegressor(max_depth=10, random_state=0)
-    regr.fit(X, y)
-
-    return regr.feature_importances_
-
-def createFeatureImportancePlot(feat_imp):
-    p = figure(plot_width = 400, plot_height=400)
-    y1 = [x for x in range(len(feat_imp.columns))]
-
-    p.hbar(y = y1,right=feat_imp,height=0.5,left=0)
-
-    return p
