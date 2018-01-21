@@ -65,3 +65,27 @@ def feature_selection():
     # Embed plot into HTML via Flask Render
     script, div = components(plot)
     return render_template("iris_index1.html", script=script, div=div)
+
+@app.route('/background')
+def background():
+    return render_template("background.html")
+
+@app.route('/regression')
+def regression():
+    return render_template("regression.html")
+
+@app.route('/ranking')
+def ranking():
+    return render_template("ranking.html")
+
+@app.route('/improvements')
+def improvements():
+    return render_template("improvements.html")
+
+@app.route('/summary')
+def summary():
+    return render_template("summary.html")
+
+@app.route('/contact')
+def contact():
+    return render_template("contact.html")
