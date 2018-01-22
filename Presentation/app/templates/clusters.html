@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <html>
 <head>
   <style>
@@ -8,7 +9,6 @@
     #left { flex: 0 0 50%; }
     #right { flex: 1; }
     #wide { flex: 0 0 90%;}
-    p { font-size: 32px; }
   </style>
 <link
     href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.css"
@@ -22,21 +22,32 @@
 
 </head>
 <body>
-    <h1 style="text-align:center">Ranking</h1>
+<H1>K means clustering</H1>
 
-    <div id='wrapper'>
-      <div id='left'>
+<form action="/clusters">
+<select name="selection">
+  {% for cl_option in cl_options %}
+    {% if cl_option == cl_sel %}
+       <option selected value="{{ cl_option }}">{{ cl_option }}</option>
+         {% else %}
+  <option value="{{ cl_option }}">{{ cl_option }}</option>
+{% endif %}
+{% endfor %}
+</select>
+<input type="submit">
+</form>
+<div id='wrapper'>
+  <div id='left'>
 
-          {{ script|safe }}
-          {{ div|safe }}
-      </div>
-      <div>
-        <p> Fleet owner would like to be able to rank drivers based on a combination of drive fuel economy and safety </p>
-        <br />
-        <p> Assumption: Number of hard brakes is an indicator for unsafe driving </p>
-        <br />
-        <p> Decision tree with adjusted drive fuel economy and number of hard brakes as inputs </p>
-        <br />
-        <p> New trips can be scored based on trained model </p>
+      {{ script|safe }}
+      {{ div|safe }}
+  </div>
+  <div>
+    {{ script2|safe }}
+    {{ div2|safe }}
+  </div>
+
 </body>
+</html>
+
 {% endblock %}

@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Background and Scope</h1>
+  <style>
+    li { font-size: 24px}
+  </style>
+  <div align="center">
+    <h1 style=>Project Outline</h1>
+  </div>
 
+  <div>
+    <ul>
+      <li>Data comes from Engine Control Module (ECM) installed in vehicles</li>
+      <li>Factors like avg. speed, cruise control usage, % time over speed limit etc are examples of driver behavior</li>
+      <li>Truck load is not driver behavior - will need to be normalized</li>
+      <li>Cluster trips - are a certain driver's most trips in the same cluster?</li>
+      <li>Rank drivers based on a combination of drive fuel economy and risky driving</li>
+    </ul>
+  </div>
 {% endblock %}

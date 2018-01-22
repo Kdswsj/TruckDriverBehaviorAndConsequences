@@ -1,6 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Summary</h1>
+<style>
+  li { font-size: 24px}
+</style>
+<div align="center">
+  <h1 style=>Summary</h1>
+</div>
+
+<div>
+  <ul>
+    <li>Identified factors from Engine Control Module data that are assumed to be dependent on driver behavior</li>
+    <li>Clustered trips - found that most drivers have the majority of their trips in the same cluster</li>
+    <li>Attempted to rank drivers based on a combination of drive fuel economy and risky driving</li>
+    <li>Once more data becomes available driver ranking needs to be improved</li>
+  </ul>
+</div>
 
 {% endblock %}

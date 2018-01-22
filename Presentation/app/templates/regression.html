@@ -1,6 +1,51 @@
 {% extends "base.html" %}
 
 {% block content %}
+<html>
+<head>
+  <style>
+    #wrapper { display: flex; }
+    #left { flex: 0 0 50%; }
+    #right { flex: 1; }
+    #wide { flex: 0 0 90%;}
+  </style>
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.10.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.12.10.min.js"></script>
+
+</head>
+<body>
     <h1>Regression</h1>
 
+    <form action="/regression">
+    <select name="selection">
+      {% for option in options %}
+		    {% if option == current_sel %}
+			     <option selected value="{{ option }}">{{ option }}</option>
+		         {% else %}
+			<option value="{{ option }}">{{ option }}</option>
+		{% endif %}
+	{% endfor %}
+</select>
+<input type="submit">
+</form>
+
+<div id='wrapper'>
+  <div id='left'>
+
+      {{ script1|safe }}
+      {{ div1|safe }}
+  </div>
+  <div>
+    {{ script2|safe }}
+    {{ div2|safe }}
+  </div>
+</body>
+</html>
 {% endblock %}
