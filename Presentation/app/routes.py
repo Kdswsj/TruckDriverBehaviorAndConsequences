@@ -39,6 +39,8 @@ def create_figure(x, y, x_label, y_label):
     p.scatter(x,y,color = clr)
     p.xaxis.axis_label = x_label
     p.yaxis.axis_label = y_label
+    p.xaxis.axis_label_text_font_size = "20pt"
+    p.yaxis.axis_label_text_font_size = "20pt"
     return p
 
 

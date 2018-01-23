@@ -4,6 +4,12 @@
 
 <html>
 <head>
+  <style>
+    #wrapper { display: flex; }
+    #left { flex: 0 0 50%; }
+    #right { flex: 1; }
+    #wide { flex: 0 0 90%;}
+  </style>
 <link
     href="http://cdn.pydata.org/bokeh/release/bokeh-0.12.10.min.css"
     rel="stylesheet" type="text/css">
@@ -16,13 +22,14 @@
 
 </head>
 <body>
-<H1>Feature importance (random forest regressor)</H1>
+<h2>Feature importance - random forest regressor</h2>
 
-
+<div id="wrapper">
 
 {{ script|safe }}
 {{ div|safe }}
 
+</div>
 </body>
 </html>
 

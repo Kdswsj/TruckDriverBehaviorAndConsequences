@@ -75,7 +75,11 @@ def createFeatureImportancePlot(feat_imp):
     f = [features[i] for i in indices]
 
     p = figure(plot_width = 1000, plot_height=600, y_range=f)
-    p.hbar(y = y1,right=feat_imp[indices],height=0.5,left=0)
+    p.hbar(y = y1,right=feat_imp[indices],height=0.9,left=0)
+    p.xaxis.axis_label_text_font_size = "20pt"
+    p.xaxis.major_label_text_font_size = "20pt"
+    p.yaxis.axis_label_text_font_size = "20pt"
+    p.yaxis.major_label_text_font_size = "20pt"
 
     return p
 
@@ -84,6 +88,8 @@ def createRegressionPlot(x,y, x_label, y_label):
     p.scatter(x,y)
     p.xaxis.axis_label = x_label
     p.yaxis.axis_label = y_label
+    p.xaxis.axis_label_text_font_size = "20pt"
+    p.yaxis.axis_label_text_font_size = "20pt"
     return p
 
 def createRankingPlot(x,y):
@@ -91,4 +97,6 @@ def createRankingPlot(x,y):
     p.circle(x,y, size=8)
     p.xaxis.axis_label = "Drive Fuel Economy"
     p.yaxis.axis_label = "Hard Brakes pr 1000 miles"
+    p.xaxis.axis_label_text_font_size = "20pt"
+    p.yaxis.axis_label_text_font_size = "20pt"
     return p

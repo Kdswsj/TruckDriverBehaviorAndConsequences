@@ -1,5 +1,6 @@
 <html>
     <head>
+      <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='main.css') }}">
       {% if title %}
       <title>{{ title }}</title>
       {% else %}
@@ -10,6 +11,7 @@
       </style>
     </head>
     <body>
+      <div class="fw">
     <table cellpadding="10">
       <tr>
         <td><a href="/index">Home</a></td>
@@ -22,7 +24,10 @@
         <td><a href="/contact">Contact</a></td>
       </tr>
     </table>
+  </div>
         <hr>
+  <div class="fw">
         {% block content %}{% endblock %}
+  </div>
     </body>
 </html>
